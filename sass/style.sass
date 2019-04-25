@@ -1,0 +1,999 @@
+$biege : rgb(239,237,230)
+$black-border: #393939
+$neon : #0afc9b
+$body-bg : #1e1f24
+
+a
+  color: inherit
+  text-decoration: none
+
+body
+  padding: 0
+  margin: 0
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  color: white
+  background-color: rgb(30, 31, 36)
+.sidebar
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: fixed
+  width: 35px
+  height: 100%
+  top: 0
+  border-right: 1px solid $black-border
+  cursor: pointer
+  z-index: 99
+  background-color: rgb(30, 31, 36)
+  backface-visibility: hidden
+  .logo
+    font-size: 1.3em
+    position: absolute
+    top: 0
+    margin-top: 3px
+
+  .handle
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 9px
+    height: 30px
+    .v-bar-a, .v-bar-b
+      width: 2px
+      height: 100%
+      background-color: #6c6c6c
+
+.outer-most
+  min-width: 100%
+  width: auto
+  height: 100%
+  overflow-Y: hidden
+  position: absolute
+  background:
+    image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180086/texture_akcj8b.png)
+  .side-panel
+    display: inline-block
+    width: 75%
+    height: 100%
+    color: #dadada
+    margin-left: -75%
+    position: relative
+    backface-visibility: hidden
+    .side-panel-overlay
+      width: 100%
+      height: 100%
+      position: absolute
+      border-right: 1px solid $black-border
+      padding-left: 35px
+      backface-visibility: hidden
+      background:
+        image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180141/honeycomb_s9jgpr.png)
+      .about-me
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+        width: 100%
+        height: 100%
+        background: linear-gradient(to right, rgba(30,31,36,0.20) 0%,rgba(30,31,36,1) 50%,rgba(30,31,36,0.20) 100%)
+        backface-visibility: hidden
+        .content-box
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          width: 90%
+          height: 90%
+          border: 1px solid $black-border
+          position: relative
+          &::before
+            content: 'About'
+            color: $neon
+            font-family: "Fira sans"
+            font-size: 0.8em
+            letter-spacing: 0.2em
+            position: absolute
+            top: 0
+            right: 0
+            margin-top: -9px
+            margin-right: 10px
+          .avatar
+            box-sizing: border-box
+            position: absolute
+            width: 180px
+            height: 180px
+            top: -3%
+            left: 3%
+            z-index: 2
+            border: 6px solid $black-border
+            box-shadow: 0 0 20px rgba(0,0,0,0.8)
+            backface-visibility: hidden
+            background:
+              image: url(https://avatars3.githubusercontent.com/u/2948696)
+              size: cover
+              repeat: no-repeat
+            .contact
+              display: flex
+              flex-direction: column
+              align-items: center
+              position: absolute
+              bottom: 0
+              left: 115%
+              z-index: 1
+              .contact-glyph
+                font-size: 1.3em
+              .email
+                margin-bottom: 7px
+              .github
+                margin-bottom: 7px
+              .skype
+
+          .content
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+            width: 90%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            span
+              font-family: "Fira sans"
+              background-color: #8f8b8b
+              color: transparent
+              -webkit-background-clip: text
+              text-align: justify
+              font-size: 0.9em
+              text-indent: 2em
+              line-height: 1.5em
+          .sig
+            width: 90px
+            height: 80px
+            position: absolute
+            right: 5%
+            bottom: 2%
+            background:
+              image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180442/sig_ieenwe.png)
+              size: contain
+              repeat: no-repeat
+
+  .front-area
+    display: inline-block
+    width: auto
+    height: 100%
+    .content-container
+      display: flex
+      width: auto
+      height: 100%
+      position: absolute
+      .profile
+        box-sizing: border-box
+        min-width: 50vw
+        height: 100%
+        position: relative
+        .dial-container
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          height: 100%
+          position: absolute
+          z-index: 0
+          .dial
+            width: 70%
+            height: auto
+        .text-container
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          height: 100%
+          position: absolute
+          z-index: 1
+          left: 0
+          .text-overlay
+            margin-top: 150px
+            text-align: center
+            width: 100%
+            font-family: 'Fira Sans', sans-serif
+            .greeting
+              font-size: 2.5em
+              background-color: #fafafa
+              color: transparent
+              -webkit-background-clip: text
+            .name
+              font-size: 1.5em
+              background-color: #8f8b8b
+              color: transparent
+              -webkit-background-clip: text
+              span
+                background-color: $neon
+                color: transparent
+                -webkit-background-clip: text
+            .iam
+              font-size: 4em
+              letter-spacing: 5px
+              padding-left: 20px
+              background-color: #fafafa
+              color: transparent
+              -webkit-background-clip: text
+            .endline
+              background-color: #8f8b8b
+              color: transparent
+              -webkit-background-clip: text
+              font-size: 0.8em
+        .forward-indicator
+          position: absolute
+          left: 100%
+          top: 35%
+          font-size: 2em
+          transform: translateX(-40px)
+          color: #6c6c6c
+          cursor: pointer
+          z-index: 9
+      .projects
+        display: flex
+        min-width: 40vw
+        width: auto
+        height: 100%
+        .skills
+          text-align: center
+          min-width: 350px
+          height: 100%
+          border-left: 1px solid $black-border
+          position: relative
+          .skills-overlay
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            width: 100%
+            height: 100%
+            position: relative
+            .tool-chain
+              display: flex
+              flex-direction: column
+              align-items: center
+              justify-content: center
+              width: 100%
+              height: 100%
+              min-height: 470px
+              font-family: "Fira sans"
+              background:
+                image: url(https://res.cloudinary.com/kmeda/image/upload/v1509181756/halftonesimple_cbpemp.png)
+                size: cover
+                repeat: no-repeat
+              .label
+                margin-bottom: 30px
+                width: 100%
+                font-size: 1.3em
+                background-color: #8f8b8b
+                color: transparent
+                -webkit-background-clip: text
+                span
+                  font-size: 0.9em
+                  background-color: $neon
+                  color: transparent
+                  -webkit-background-clip: text
+              .skill
+                text-align: left
+                width: 70%
+                min-height: 40px
+                font-size: 0.8em
+                background-color: #8f8b8b
+                color: transparent
+                -webkit-background-clip: text
+                margin-bottom: 5px
+                position: relative
+                .level
+                  margin-top: 5px
+                  width: 100%
+                  height: 1px
+                  background-color: rgba(10, 252, 155, 0.2)
+                  position: relative
+                .level.selenium
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 98%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.protractor
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 70%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.bdd
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 95%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.language
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 70%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.appium
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 40%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.api
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 90%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.jenkins
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 95%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.docker
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 85%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.kubernetes
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 55%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.zalenium
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 90%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.git
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 95%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.shell
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 45%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+                .level.management
+                  &::after
+                    content: ''
+                    position: absolute
+                    width: 75%
+                    height: 2px
+                    background-color: rgba(10, 252, 155, 1)
+        .projects-wrapper
+          display: flex
+          align-items: center
+          justify-content: center
+          min-width: 2500px
+          width: auto
+          height: 100%
+          padding-right: 100px
+          padding-left: 50px
+          border-left: 1px solid $black-border
+          position: relative
+          background:
+            image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180141/honeycomb_s9jgpr.png)
+          &::before
+            content: 'Experience'
+            position: absolute
+            transform: rotate(-90deg)
+            left: 0
+            background-color: rgba(10, 252, 155, 0.9)
+            color: transparent
+            -webkit-background-clip: text
+            font-family: "Fira sans"
+            font-size: 1.2em
+
+          .grid-container
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 97%
+            height: 90%
+            .grid
+              width: 100%
+              height: 100%
+              display: grid
+              grid-template-columns: repeat( 7, 1fr )
+              grid-template-rows: 1fr 1fr 1fr
+              grid-gap: 15px 15px
+              .project
+                box-shadow: 0 0 30px rgba(0,0,0,0.9)
+                text-align: center
+                position: relative
+                .overlay
+                  position: absolute
+                  width: 100%
+                  height: 100%
+                  background-color: rgba(0,0,0,0.65)
+                  left: 0
+                  top: 0
+                  overflow: hidden
+                  font-family: "Fira Sans"
+                  &:hover
+                    background-color: rgba(0,0,0,0.2)
+                  .count
+                    position: absolute
+                    right: 0
+                    font-size: 1.1em
+                    padding-right: 5px
+                    padding-top: 5px
+                    z-index: 9
+                    background-color: #e3e0e0
+                    color: transparent
+                    -webkit-background-clip: text
+                  .description
+                    position: absolute
+                    z-index: 9
+                    background-color: #e3e0e0
+                    color: transparent
+                    -webkit-background-clip: text
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                  .popup
+                    position: absolute
+                    width: 100%
+                    height: 60%
+                    background-color: rgba(0,0,0,0.9)
+                    bottom: 0
+                    top: 100%
+                    .stack
+                      position: absolute
+                      left: 5%
+                      top: 100%
+                      span
+                        text-align: left
+                        padding-left: 5px
+                        padding-right: 15px
+                        font-family: "Fira sans"
+                        font-size: 0.7em
+                        background-color: #e3e0e0
+                        color: transparent
+                        -webkit-background-clip: text
+                    .github
+                      position: absolute
+                      left: 50%
+                      bottom: -10%
+                      transform: translateX(-30px)
+                      cursor: pointer
+                    .live-link
+                      position: absolute
+                      left: 50%
+                      bottom: -10%
+                      cursor: pointer
+
+              .project-21
+                grid-column-start: 1
+                grid-column-end: 2
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180401/project21_kfxzmg.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+                .overlay
+                  .popup
+                    .description
+                    .github
+                    .live-link
+              .project-20
+                grid-column-start: 1
+                grid-column-end: 2
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project20_zyfs01.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-19
+                grid-column-start: 1
+                grid-column-end: 2
+                grid-row-start: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project19_cfz4uy.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-18
+                grid-column-start: 2
+                grid-column-end: 3
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project18_aetjjj.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-17
+                grid-column-start: 2
+                grid-column-end: 3
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project17_fht0it.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-16
+                grid-column-start: 2
+                grid-column-end: 3
+                grid-row-start: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project16_e9gseo.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-15
+                grid-column-start: 3
+                grid-column-end: 4
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  // image: url(../assets/project16.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-14
+                grid-column-start: 3
+                grid-column-end: 4
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project14_y6saok.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-13
+                grid-column-start: 3
+                grid-column-end: 4
+                grid-row-start: 3
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180402/project13_wri7tn.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-12
+                grid-column-start: 4
+                grid-column-end: 5
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project12_sz4zvc.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-11
+                grid-column-start: 4
+                grid-column-end: 5
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project11_ok5taw.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-10
+                grid-column-start: 4
+                grid-column-end: 5
+                grid-row-start: 3
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project10_fdjhwk.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-09
+                grid-column-start: 5
+                grid-column-end: 6
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project09_xnciti.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-08
+                grid-column-start: 5
+                grid-column-end: 6
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project08_wmg8q0.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-07
+                grid-column-start: 5
+                grid-column-end: 6
+                grid-row-start: 3
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180404/project07_lidrbh.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-06
+                grid-column-start: 6
+                grid-column-end: 7
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project06_ulao95.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-05
+                grid-column-start: 6
+                grid-column-end: 7
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180404/project05_nn9tbh.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-04
+                grid-column-start: 6
+                grid-column-end: 7
+                grid-row-start: 3
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180403/project04_sc4fia.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-03
+                grid-column-start: 7
+                grid-column-end: 8
+                grid-row-start: 1
+                grid-row-end: 2
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180404/project03_zfag0i.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-02
+                grid-column-start: 7
+                grid-column-end: 8
+                grid-row-start: 2
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180404/project02_pxs8yt.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+              .project-01
+                grid-column-start: 7
+                grid-column-end: 8
+                grid-row-start: 3
+                grid-row-end: 3
+                background:
+                  image: url(https://res.cloudinary.com/kmeda/image/upload/v1509180404/project01_v0j8wl.png)
+                  size: cover
+                  position: center
+                  repeat: no-repeat
+        .go-back-indicator
+          height: 100%
+          min-width: 40px
+          border-left: 1px solid $black-border
+          text-align: center
+          font-size: 2em
+          transform: translateX(-15px)
+          position: absolute
+          right: 0
+          .back
+            color: #6c6c6c
+            cursor: pointer
+
+::-webkit-scrollbar
+  width: 10px
+  height: 10px
+::-webkit-scrollbar-track
+  background: rgb(30, 31, 36)
+  background-clip: content-box
+::-webkit-scrollbar-thumb
+  background: #6c6c6c
+  border: 3px solid rgb(30, 31, 36)
+  border-radius: 5px
+
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .profile
+    min-width: 100vw !important
+  .greeting
+    font-size: 1em !important
+  .name
+    font-size: 0.8em !important
+  .iam
+    font-size: 1.5em !important
+  .endline
+    font-size: 0.6em !important
+  .forward-indicator
+    font-size: 1.5em !important
+  .go-back-indicator
+    font-size: 1.5em !important
+  .projects-wrapper
+    min-width: 1700px !important
+
+  .count
+    font-size: 0.9em !important
+  .description
+    font-size: 0.7em !important
+  .popup
+    .stack
+      font-size: 0.7em !important
+      top: 40% !important
+      span
+        font-size: 0.5em !important
+    .github
+      font-size: 0.7em !important
+    .live-link
+      font-size: 0.7em !important
+
+  .avatar
+    width: 100px !important
+    height: 100px !important
+    border: 4px solid $black-border !important
+
+  .contact-glyph
+    font-size: 0.9em !important
+
+  .sig
+    width: 55px !important
+    height: 45px !important
+  .content-box
+    &::before
+      font-size: 0.7em !important
+      margin-top: -7px !important
+      margin-right: 10px !important
+  .content
+    span
+      font-size: 0.7em !important
+
+
+@media only screen and (min-width : 481px) and (max-width : 1280px)
+  .profile
+    min-width: 65vw !important
+  .greeting
+    font-size: 1.3em !important
+  .name
+    font-size: 1em !important
+  .iam
+    font-size: 2em !important
+  .endline
+    font-size: 0.7em !important
+  .forward-indicator
+    font-size: 1.5em !important
+  .go-back-indicator
+    font-size: 1.5em !important
+
+
+@media only screen and (min-width : 800px) and (max-width : 1280px)
+  .greeting
+    font-size: 1.7em !important
+  .name
+    font-size: 1.3em !important
+  .iam
+    font-size: 3em !important
+  .endline
+    font-size: 1em !important
+  .forward-indicator
+    font-size: 2em !important
+  .go-back-indicator
+    font-size: 1.5em !important
+
+  .projects-wrapper
+    min-width: 2000px !important
+
+  .count
+    font-size: 0.9em !important
+  .description
+    font-size: 0.9em !important
+  .popup
+    .stack
+      font-size: 0.8em !important
+      top: 40% !important
+      span
+        font-size: 0.7em !important
+    .github
+      font-size: 0.8em !important
+    .live-link
+      font-size: 0.8em !important
+@media only screen and (min-height : 320px) and (max-height : 420px)
+  .profile
+    min-width: 75vw !important
+  .greeting
+    font-size: 1em !important
+  .name
+    font-size: 0.8em !important
+  .iam
+    font-size: 1.3em !important
+  .endline
+    font-size: 0.6em !important
+  .forward-indicator
+    font-size: 1.5em !important
+  .go-back-indicator
+    font-size: 1.5em !important
+  .dial
+    width: 60% !important
+  .skills
+    min-width: 300px !important
+    .skills-overlay
+      .tool-chain
+        min-height: 320px !important
+        .label
+          margin-bottom: 20px !important
+          font-size: 0.85em !important
+        .skill
+          min-height: 25px !important
+          font-size: 0.6em !important
+          margin-bottom: 3px !important
+          .level
+            margin-top: 3px !important
+  .grid
+    grid-template-columns: repeat( 11, 1fr ) !important
+    grid-template-rows: 1fr 1fr !important
+    grid-gap: 10px 10px !important
+    .project-21
+      grid-column-start: 1 !important
+      grid-column-end: 2 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-20
+      grid-column-start: 1 !important
+      grid-column-end: 2 !important
+      grid-row-start: 2 !important
+    .project-19
+      grid-column-start: 2 !important
+      grid-column-end: 3 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-18
+      grid-column-start: 2 !important
+      grid-column-end: 3 !important
+      grid-row-start: 2 !important
+    .project-17
+      grid-column-start: 3 !important
+      grid-column-end: 4 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-16
+      grid-column-start: 3 !important
+      grid-column-end: 4 !important
+      grid-row-start: 2 !important
+    .project-15
+      grid-column-start: 4 !important
+      grid-column-end: 5 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-14
+      grid-column-start: 4 !important
+      grid-column-end: 5 !important
+      grid-row-start: 2 !important
+    .project-13
+      grid-column-start: 5 !important
+      grid-column-end: 6 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-12
+      grid-column-start: 5 !important
+      grid-column-end: 6 !important
+      grid-row-start: 2 !important
+    .project-11
+      grid-column-start: 6 !important
+      grid-column-end: 7 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-10
+      grid-column-start: 6 !important
+      grid-column-end: 7 !important
+      grid-row-start: 2 !important
+    .project-09
+      grid-column-start: 7 !important
+      grid-column-end: 8 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-08
+      grid-column-start: 7 !important
+      grid-column-end: 8 !important
+      grid-row-start: 2 !important
+    .project-07
+      grid-column-start: 8 !important
+      grid-column-end: 9 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-06
+      grid-column-start: 8 !important
+      grid-column-end: 9 !important
+      grid-row-start: 2 !important
+    .project-05
+      grid-column-start: 9 !important
+      grid-column-end: 10 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-04
+      grid-column-start: 9 !important
+      grid-column-end: 10 !important
+      grid-row-start: 2 !important
+    .project-03
+      grid-column-start: 10 !important
+      grid-column-end: 11 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+    .project-02
+      grid-column-start: 10 !important
+      grid-column-end: 11 !important
+      grid-row-start: 2 !important
+    .project-01
+      grid-column-start: 11 !important
+      grid-column-end: 12 !important
+      grid-row-start: 1 !important
+      grid-row-end: 2 !important
+
+  .count
+    font-size: 0.9em !important
+  .description
+    font-size: 0.7em !important
+  .popup
+    .stack
+      font-size: 0.7em !important
+      top: 40% !important
+      span
+        font-size: 0.5em !important
+    .github
+      font-size: 0.7em !important
+    .live-link
+      font-size: 0.7em !important
+
+  .avatar
+    width: 100px !important
+    height: 100px !important
+    border: 4px solid $black-border !important
+
+  .contact-glyph
+    font-size: 0.8em !important
+
+  .sig
+    width: 55px !important
+    height: 45px !important
+  .content-box
+    &::before
+      font-size: 0.7em !important
+      margin-top: -7px !important
+      margin-right: 10px !important
+  //
+  .content
+    top: 60% !important
+    span
+      font-size: 0.65em !important
