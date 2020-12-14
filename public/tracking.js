@@ -9,7 +9,7 @@ var userId = "user123";
 */
 
 // We need some way to identify which experiment is active for a given page.
-var experimentKey = 'exampleExperiment';
+var experimentKey = 'sac_stg_test';
 var variationKey = optimizelyClientInstance.activate(experimentKey, userId);
 
 // Take experimentKey and variationKey and send off to Adobe Analytics.
