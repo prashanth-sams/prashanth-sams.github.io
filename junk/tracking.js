@@ -1,7 +1,7 @@
 // JavaScript SDK Initialization
 var optimizelyClientInstance = optimizelyClient.createInstance({datafile: window.DATAFILE});
 // Retrieve Full Stack User ID (Presumably from cookie)
-var userId = "user123";
+var userId = 'user123';
 /*
 	Scenario:
 	"exampleExperiment" is running on this page (i.e. we've called getVariation() on the server)

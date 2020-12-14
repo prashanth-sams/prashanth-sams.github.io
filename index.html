@@ -5,10 +5,52 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Prashanth Sams</title>
         <link rel="stylesheet" href="./public/style.css">
+        <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js"></script>
+        <script>
+            const url = 'https://cdn.optimizely.com/datafiles/5C8axMaqs2w5FtV8VYTRV.json';
+            window
+              .fetch(url, { mode: 'cors' })
+              .then(response => response.json())
+              .then(datafile => {  
+                const optimizelyClientInstance = optimizelySdk.createInstance({
+                  sdkKey: '5C8axMaqs2w5FtV8VYTRV'
+                });
+
+                optimizelyClientInstance.onReady().then(() => {
+    
+                console.log('Optimizely client ready');
+
+                const enabled = optimizelyClientInstance.isFeatureEnabled('sac_stg', 'user123');
+
+                }).catch(error => {
+                    console.log("Error: " + error)
+                });
+                
+                document.querySelector("#click-me").addEventListener("click", function() {
+                    event.preventDefault();
+                    optimizelyClientInstance.track('test_event', 'user123');
+                    document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered first event</h3>')
+                });
+
+                document.querySelector("#dont-click").addEventListener("click", function() {
+                    event.preventDefault();
+                    optimizelyClientInstance.track('test_event', 'user123');
+                    document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered second event</h3>')
+                });
+
+
+                document.querySelector("#skip").addEventListener("click", function() {
+                    event.preventDefault();
+                    optimizelyClientInstance.track('test_event', 'user123');
+                    document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered third event</h3>')
+                });
+            });
+        </script>
+        
     </head>
     <body>
         <h1 class='center font'>Hello!</h1>
-        <div class='center'>
+        <div class='center' id='body'>
             <p class='paraFont'>A/B testing variants</p>
             </br>
             <button class='buttonFont' id='click-me'>Click Me</button>
