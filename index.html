@@ -16,32 +16,36 @@
                   sdkKey: '5C8axMaqs2w5FtV8VYTRV'
                 });
 
+                function makeid() {
+                    var userId = "";
+                    userId = String(Math.random());
+                    return userId;
+                };
+                const userId = makeid();
+
                 optimizelyClientInstance.onReady().then(() => {
-    
-                console.log('Optimizely client ready');
-
-                const enabled = optimizelyClientInstance.isFeatureEnabled('sac_stg', 'user123');
-
+                    console.log('Optimizely client ready');
+                    const enabled = optimizelyClientInstance.isFeatureEnabled('sac_stg', userId);
                 }).catch(error => {
                     console.log("Error: " + error)
                 });
                 
                 document.querySelector("#click-me").addEventListener("click", function() {
                     event.preventDefault();
-                    optimizelyClientInstance.track('test_event', 'user123');
+                    optimizelyClientInstance.track('test_event', userId);
                     document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered first event</h3>')
                 });
 
                 document.querySelector("#dont-click").addEventListener("click", function() {
                     event.preventDefault();
-                    optimizelyClientInstance.track('test_event', 'user123');
+                    optimizelyClientInstance.track('test_event', userId);
                     document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered second event</h3>')
                 });
 
 
                 document.querySelector("#skip").addEventListener("click", function() {
                     event.preventDefault();
-                    optimizelyClientInstance.track('test_event', 'user123');
+                    optimizelyClientInstance.track('test_event', userId);
                     document.querySelector('button').insertAdjacentHTML('beforebegin', '<h3 style="color: red; text-align:center;">triggered third event</h3>')
                 });
             });
